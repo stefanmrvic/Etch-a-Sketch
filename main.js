@@ -11,26 +11,25 @@ window.addEventListener('load', () => {
         }
     }
 
+    const totalGridWidth = 560;
     const gridElements = document.querySelectorAll('.grid__element');
 
-    gridElements.forEach(ele => {
-        switch(gridSize) {
-            case 6: 
-            ele.classList.add('grid-1');
-            ele.setAttribute("draggable", "false");
-        }
-
-        grid.addEventListener('mousedown', () => {
-            ele.addEventListener('mouseover', setGridElementColor);
-        });
-        
-        grid.addEventListener('mouseup', () => {
-            ele.removeEventListener('mouseover', setGridElementColor);
-        });
+    let gridElementWidth = totalGridWidth / gridSize;
+    
+    gridElements.forEach(element => {
+        element.style.flexBasis = `${gridElementWidth}px`;
     })
 
-    function setGridElementColor(e) {
+    grid.addEventListener('mousedown', (e) => {
+        grid.addEventListener('mousemove', changeBackground);
+        e.preventDefault();
+    });
+
+    grid.addEventListener('mouseup', () => {
+        grid.removeEventListener('mousemove', changeBackground);
+    });
+
+    function changeBackground(e) {
         e.target.style.backgroundColor = "pink";
-        e.target.preventDefault()
     }
 })

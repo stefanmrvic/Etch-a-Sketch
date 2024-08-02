@@ -19,6 +19,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items:  flex-end;
+    justify-content: center;
     flex-basis: calc(33.3% - 90px);
     gap: 20px;
     margin-right: 90px;
@@ -27,6 +28,23 @@ html {
 button {
     width: 170px;
     height: 37px;
+}
+
+.button__slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+    width: 170px;
+}
+
+.button__slider--label {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.button__slider--range {
+    width: 100%;
 }
 
 .grid__container {

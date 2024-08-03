@@ -1,27 +1,24 @@
 window.addEventListener('load', () => {
     const grid = document.querySelector('.grid');
     
-    let gridSize = document.querySelector('#slider');
+    let slider = document.querySelector('#slider');
+    let gridSize = slider.value;
     let sliderLabel = document.querySelectorAll('.button__slider--value');
 
     drawGrid();
 
-    gridSize.addEventListener('mousedown', () => {
-        gridSize.addEventListener('mousemove', setGridAndLabel);
-    })
-
-    gridSize.addEventListener('change', setGridAndLabel);
+    slider.addEventListener('input', setGridAndLabel);
 
     function setGridAndLabel() {
-        gridSize = document.querySelector('#slider');
+        gridSize = slider.value;
         setSliderLabel();
         removeOldGrid();
         drawGrid();
     }
 
     function setSliderLabel() {
-        sliderLabel[0].innerHTML = gridSize.value;
-        sliderLabel[1].innerHTML = gridSize.value;
+        sliderLabel[0].innerHTML = gridSize;
+        sliderLabel[1].innerHTML = gridSize;
     }
 
     document.body.addEventListener('mouseup', () => {
@@ -37,8 +34,8 @@ window.addEventListener('load', () => {
     }
 
     function drawGrid() {
-        for(let i = 0; i < gridSize.value; i++) {
-            for(let j = 0; j < gridSize.value; j++) {
+        for(let i = 0; i < gridSize; i++) {
+            for(let j = 0; j < gridSize; j++) {
                 const newDiv = document.createElement('div');
                 newDiv.classList.add('grid__element');
                 grid.appendChild(newDiv);
@@ -48,7 +45,7 @@ window.addEventListener('load', () => {
         const totalGridWidth = 560;
         const gridElements = document.querySelectorAll('.grid__element');
     
-        const gridElementWidth = totalGridWidth / gridSize.value;
+        const gridElementWidth = totalGridWidth / gridSize;
         
         gridElements.forEach(element => {
             element.style.flexBasis = `${gridElementWidth}px`;

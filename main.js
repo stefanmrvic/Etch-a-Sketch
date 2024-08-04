@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
     let slider = document.querySelector('#slider');
     let gridSize = slider.value;
     let sliderLabel = document.querySelectorAll('.button__slider--value');
+    let currBtn = 'color-mode';
 
     drawGrid();
 
@@ -20,10 +21,6 @@ window.addEventListener('load', () => {
         sliderLabel[0].innerHTML = gridSize;
         sliderLabel[1].innerHTML = gridSize;
     }
-
-    document.body.addEventListener('mouseup', () => {
-        gridSize.removeEventListener('mousemove', setGridAndLabel);
-    })
 
     function removeOldGrid() {
         const divs = document.querySelectorAll('.grid__element');
@@ -53,15 +50,52 @@ window.addEventListener('load', () => {
     }
 
     grid.addEventListener('mousedown', (e) => {
-        grid.addEventListener('mousemove', changeBackground);
+        grid.addEventListener('mouseover', changeBackground);
         e.preventDefault();
     });
 
     document.body.addEventListener('mouseup', () => {
-        grid.removeEventListener('mousemove', changeBackground);
+        grid.removeEventListener('mouseover', changeBackground);
+        grid.removeEventListener('click', changeBackground);
     });
 
     function changeBackground(e) {
-        e.target.style.backgroundColor = "black";
+        if (currBtn === 'eraser') {
+            e.target.style.backgroundColor = "white";
+        } else if (currBtn === 'rainbow'){
+            e.target.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`;
+        } else {
+            e.target.style.backgroundColor = "black";
+        }
+    }
+
+    const clearBtn = document.querySelector('.button__clear');
+    const eraserBtn = document.querySelector('.button__eraser');
+    const rainbowBtn = document.querySelector('.button__rainbow');
+    const colorModeBtn = document.querySelector('.button__color-mode');
+
+    clearBtn.addEventListener('click', setBackgroundColorWhite);
+
+    function setBackgroundColorWhite() {
+        const gridElements = document.querySelectorAll('.grid__element');
+        gridElements.forEach(element => {
+            element.style.backgroundColor = 'white';
+        })
+    }
+
+    eraserBtn.addEventListener('click', () => {
+        currBtn = 'eraser';
+    });     
+    
+    colorModeBtn.addEventListener('click', () => {
+        currBtn = 'color-mode';
+    });     
+    
+    rainbowBtn.addEventListener('click', () => {
+        currBtn = 'rainbow';
+    }); 
+
+    function random() {
+        return Math.floor(Math.random() * 255);
     }
 })

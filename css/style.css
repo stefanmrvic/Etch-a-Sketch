@@ -29,7 +29,7 @@ html {
 button {
     color: #333;
     font-size: 15px;
-    width: 195px;
+    width: 185px;
     height: 40px;
     background-color: transparent;
     border: 1px solid #333;
@@ -39,7 +39,7 @@ button {
 }
 
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .active {
@@ -84,7 +84,7 @@ button:hover {
     justify-content: center;
     align-items: center;  
     flex-direction: column;
-    width: 195px;
+    width: 185px;
 }
 
 input[type=range] {
@@ -96,7 +96,7 @@ input[type=range] {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    width: 195px;
+    width: 185px;
     height: 10px;
     background: transparent;
     border: 1px solid #333;

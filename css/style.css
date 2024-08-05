@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: pink;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.button__container {
+    display: flex;
+    flex-direction: column;
+    align-items:  flex-end;
+    justify-content: center;
+    flex-basis: calc(33.3% - 90px);
+    gap: 30px;
+    margin-right: 110px;
+    margin-top: 109px;
+}
+
+button {
+    color: #333;
+    font-size: 15px;
+    width: 195px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform .15s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.active {
+    background-color: #333;
+    color: #fff; 
+}
+
+/* button:hover {
+
+} */
+
+.button__color-picker {
+    margin-right: 57px;
+}
+
+#color-picker {
+    width: 75px;
+    height: 75px;
+    background-color: #333333;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    transition: transform .15s;
+}
+
+#color-picker:hover {
+    transform: scale(1.05);
+}
+
+#color-picker::-webkit-color-swatch {
+    border: none;
+}
+
+#color-picker::-moz-color-swatch {
+    border: none;
+}
+
+.button__slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+    width: 195px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 195px;
+    height: 10px;
+    background: transparent;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #333;
+    height: 21px;
+    width: 21px;
+    border-radius: 50%;
+    background: #333333;
+    margin-top: -6px;
+}
+
+input[type=range]:focus {
+    outline: none;
+    background: transparent;
+    border-radius: 10px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.button__slider--label {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.grid__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 560px;
+    margin-right: 33.3%;
+}
+
+.grid {
+    display: flex;
+    height: 560px;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.grid__title {
+    font-size: 80px;
+    flex-basis: 100%;
+    text-align: center;
+    margin: 40px 0;
+}

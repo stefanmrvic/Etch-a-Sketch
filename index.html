@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="button__container">
-            <button class="button__color-mode">Color mode</button>
-            <button class="button__rainbow">Rainbow mode</button>
-            <button class="button__eraser">Eraser</button>
-            <button class="button__clear">Clear</button>
+            <div class="button__color-picker">
+                <input id="color-picker" type="color" value="#333333">
+            </div>
+            <button id="color-mode" class="button__color-mode active">Color mode</button>
+            <button id="rainbow" class="button__rainbow">Rainbow mode</button>
+            <button id="eraser" class="button__eraser">Eraser</button>
+            <button id="clear" class="button__clear">Clear</button>
             <div class="button__slider">
                 <label class="button__slider--label">
                     <span class="button__slider--value">16</span>
@@ -27,6 +30,6 @@
             <div class="grid"></div>
         </div>
     </div>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -8,16 +8,17 @@ window.addEventListener('load', () => {
 
     drawGrid();
 
-    slider.addEventListener('input', setGridAndLabel);
+    slider.addEventListener('input', setSliderLabel);
+    slider.addEventListener('click', setGridSize);
 
-    function setGridAndLabel() {
+    function setGridSize() {
         gridSize = slider.value;
-        setSliderLabel();
         removeOldGrid();
         drawGrid();
     }
 
     function setSliderLabel() {
+        gridSize = slider.value;
         sliderLabel[0].innerHTML = gridSize;
         sliderLabel[1].innerHTML = gridSize;
     }

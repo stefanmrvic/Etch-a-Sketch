@@ -4,7 +4,11 @@
 }
 
 html {
-    background: pink;
+    background: #ededed;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -46,10 +50,6 @@ button:hover {
     background-color: #333;
     color: #fff; 
 }
-
-/* button:hover {
-
-} */
 
 .button__color-picker {
     margin-right: 57px;
@@ -126,28 +126,30 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 .button__slider--label {
-    font-size: 22px;
+    font-size: 21px;
     margin-bottom: 8px;
 }
 
 .grid__container {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 560px;
+    flex-basis: 500px;
     margin-right: 33.3%;
 }
 
 .grid {
     display: flex;
-    height: 560px;
+    height: 500px;
+    min-width: 500px;
     flex-basis: 100%;
     flex-wrap: wrap;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .grid__title {
-    font-size: 80px;
-    flex-basis: 100%;
+    color: #333;
+    font-size: 78px;
     text-align: center;
     margin: 40px 0;
 }

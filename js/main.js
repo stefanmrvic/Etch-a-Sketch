@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
             }
         }
 
-        const totalGridWidth = 560;
+        const totalGridWidth = 500;
         const gridElements = document.querySelectorAll('.grid__element');
     
         const gridElementWidth = totalGridWidth / gridSize;
@@ -53,6 +53,7 @@ window.addEventListener('load', () => {
     grid.addEventListener('mousedown', (e) => {
         grid.addEventListener('mouseover', changeBackground);
         e.preventDefault();
+        e.stopPropagation
     });
 
     document.body.addEventListener('mouseup', () => {

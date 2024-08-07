@@ -40,13 +40,11 @@ window.addEventListener('load', () => {
             }
         }
 
-        const totalGridWidth = 500;
         const gridElements = document.querySelectorAll('.grid__element');
-    
-        const gridElementWidth = totalGridWidth / gridSize;
+        const gridElementWidth = 100 / gridSize;
         
         gridElements.forEach(element => {
-            element.style.flexBasis = `${gridElementWidth}px`;
+            element.style.flexBasis = `${gridElementWidth}%`;
         })
     }
 

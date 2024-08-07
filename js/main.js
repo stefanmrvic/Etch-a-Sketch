@@ -47,16 +47,16 @@ window.addEventListener('load', () => {
             element.style.flexBasis = `${gridElementWidth}%`;
         })
     }
+    
+    grid.addEventListener('mousedown', changeBackground);
 
     grid.addEventListener('mousedown', (e) => {
-        grid.addEventListener('mouseover', changeBackground);
+        grid.addEventListener('mousemove', changeBackground);
         e.preventDefault();
-        e.stopPropagation
     });
 
     document.body.addEventListener('mouseup', () => {
-        grid.removeEventListener('mouseover', changeBackground);
-        grid.removeEventListener('click', changeBackground);
+        grid.removeEventListener('mousemove', changeBackground);
     });
 
     function changeBackground(e) {
